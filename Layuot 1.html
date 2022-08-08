@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout-1</title>
+    <style>
+        #nav{
+            background-color: yellow;
+            height: 80px;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        #box{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 200px;
+            gap: 20px;
+        }
+        #box > div:nth-child(1){
+            background-color: red;
+            order:0
+        }
+        #box > div:nth-child(2){
+            background-color: green;
+            order:0
+        }
+        #box > div:nth-child(3){
+            background-color: blue;
+            order:0
+        }
+        #box > div:nth-child(4){
+            background-color: grey;
+            border:0
+        }
+        #box> div{
+            font-size: 25px;
+        }
+
+        @media all and (min-width:481px) and (max-width:761px){
+            #box{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,200px);
+            }
+            #box > div:nth-child(1){
+                order:0;
+            }
+            #box > div:nth-child(2){
+                order:40;
+            }
+            #box > div:nth-child(3){
+                order:30;
+            }
+            #box > div:nth-child(4){
+                order:50;
+            }
+        }  
+        
+        @media all and (min-width:320px) and (max-width:480px){
+            #box{
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: repeat(4,100px);
+            }
+            #box > div:nth-child(1){
+                order:0;
+            }
+            #box > div:nth-child(2){
+                order:40;
+            }
+            #box > div:nth-child(3){
+                order:50;
+            }
+            #box > div:nth-child(4){
+                order:30;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+   <div id="nav">Navigation</div> 
+   <div id="box">
+    <div>Box1</div>
+    <div>Box2</div>
+    <div>Box3</div>
+    <div>Box4</div>
+   </div>
+</body>
+</html>
